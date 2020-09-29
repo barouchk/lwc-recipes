@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track, api, wire } from 'lwc';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { getPicklistValues } from 'lightning/uiObjectInfoApi';
 
@@ -33,6 +33,5 @@ export default class CheckboxGroupFromPicklist extends LightningElement {
 
     handleChange(event) {
         this.value = event.detail.value;
-        console.log('this.value >> ', this.value)
     }
 }
