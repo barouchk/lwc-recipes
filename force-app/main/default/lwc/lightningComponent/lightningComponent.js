@@ -1,7 +1,10 @@
-import {LightningElement, track} from 'lwc';
+import {LightningElement, track, api} from 'lwc';
+
 import {showToast} from 'c/toastService'
 
 export class LightningComponent extends LightningElement {
+
+    @api recordId
 
     @track state = {
         isLoading: false
@@ -19,14 +22,8 @@ export class LightningComponent extends LightningElement {
         showToast.call(this, 'title', message, 'error', 'sticky')
     }
 
-    loadLabel(label) {
+    setLabel(label) {
         this.labels.push(label)
-    }
-
-    loadLabels(labels) {
-        for (const label of labels) {
-            this.loadLabel(label)
-        }
     }
 
     labels = {}
