@@ -22,8 +22,12 @@ export class LightningComponent extends LightningElement {
         showToast.call(this, 'title', message, 'error', 'sticky')
     }
 
-    setLabel(label) {
-        this.labels.push(label)
+    setLabels(obj) {
+        Object.getOwnPropertyNames(obj).forEach(
+            fieldName => {
+                this.labels[fieldName] = obj[fieldName]
+            }
+        )
     }
 
     labels = {}
