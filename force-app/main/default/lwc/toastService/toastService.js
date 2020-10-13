@@ -7,6 +7,8 @@
  *  
  * 2. call service by .call javascript method to bind this parameter: 
  * showToast.call(this, 'title', 'message', 'warning','sticky')
+ * showSuccess.call(this, 'title', 'message')
+ * same to all other functions (warning, info, error)
  */
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
@@ -35,4 +37,45 @@ const showToast = function (title, message, type, visibleMode) {
     this.dispatchEvent(event);
 }
 
-export { showToast }
+const showError = function (title, message) {
+    const event = getToastEvent(title, message, 'error', 'sticky')
+    this.dispatchEvent(event)
+}
+
+const showWarning = function (title, message) {
+    const event = getToastEvent(title, message, 'warning')
+    this.dispatchEvent(event)
+}
+
+const showSuccess = function (title, message) {
+    const event = getToastEvent(title, message, 'success')
+    this.dispatchEvent(event)
+}
+
+const showInfo = function (title, message) {
+    const event = getToastEvent(title, message)
+    this.dispatchEvent(event)
+}
+
+const getToastEvent = function (title, message, type, visibleMode) {
+
+    const variant = type || 'info'
+    const mode = visibleMode || 'dismissable'
+
+    const event = new ShowToastEvent({
+        title,
+        message,
+        variant,
+        mode
+    })
+
+    return event
+}
+
+export {
+    showToast,
+    showError,
+    showWarning,
+    showSuccess,
+    showInfo
+}
