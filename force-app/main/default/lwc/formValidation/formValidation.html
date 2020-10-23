@@ -1,0 +1,37 @@
+<!--
+ - Created by bkandov on 23/10/2020.
+ -->
+
+<!-- Form Validation -->
+<template>
+    <lightning-card title="Form Validation">
+        <div class="slds-m-around_medium">
+
+            <lightning-input type="text" name="name" label="Name" min-length=3 max-length=12 required
+                             value={formFields.name} onchange={onFieldChange}></lightning-input>
+            <lightning-input type="tel" name="phone" label="Phone" required
+                             value={formFields.phone} onchange={onFieldChange}></lightning-input>
+            <lightning-input type="email" name="email" label="Email" required
+                             value={formFields.email} onchange={onFieldChange}></lightning-input>
+            <lightning-input type="date" name="date" label="Date field with min and max values"
+                             min="2020-09-05" max="2020-09-22" required
+                             value={formFields.date} onchange={onFieldChange}></lightning-input>
+            <lightning-input type="number" name="number" label="Required number field with a maximum value of 99"
+                             min="10" max="99" required
+                             value={formFields.number} onchange={onFieldChange}></lightning-input>
+
+            <lightning-input type="toggle" label="Toggle" name="toggle" class="slds-m-top_x-small"
+                             checked={formFields.toggle} onchange={onFieldChange}></lightning-input>
+
+            <div class="slds-m-top_small">
+                <lightning-button label="Validate on change" variant="brand" onclick={onFormSubmit}
+                                  disabled={isFormDisabled}>
+                </lightning-button>
+            </div>
+            <div class="slds-m-top_small">
+                <lightning-button label="Validate on submit" variant="brand" onclick={onFormSubmit}>
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>
