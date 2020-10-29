@@ -201,6 +201,7 @@ export default class CustomLookup extends LightningElement {
 
     handleRemovePill() {
         this.isValue = false;
+        this.searchTerm = ''
         let selectedId = '';
         const valueSelectedEvent = new CustomEvent('valueselect', {
             detail: {selectedId, uniqueId: this.uniqueId},
@@ -288,7 +289,6 @@ export default class CustomLookup extends LightningElement {
         this.mainRecord = false;
     }
 
-    labels = {
-    }
+    labels = {}
 
 }

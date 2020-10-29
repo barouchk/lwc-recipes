@@ -14,10 +14,20 @@
                              role="none">
                             <template if:true={isValue}>
                                 <div id="lookup-pill" class="slds-pill-container">
-                                    <lightning-pill class="pillSize" label={valueObj} name={valueObj}
-                                                    onremove={handleRemovePill} href={href}>
+                                <span class="slds-pill slds-pill_link">
+                                      <span class="slds-pill__icon_container">
                                         <lightning-icon icon-name={iconName} alternative-text="acc"></lightning-icon>
-                                    </lightning-pill>
+                                      </span>
+                                    <a href={href} class="slds-pill__action">
+                                        <span class="slds-pill__label">{valueObj}</span>
+                                    </a>
+                                    <button class="slds-button slds-button_icon slds-button_icon slds-pill__remove"
+                                            title="Remove"
+                                            onclick={handleRemovePill}>
+                                <lightning-button-icon icon-name="utility:close" variant="bare"
+                                                       size="large"></lightning-button-icon>
+                                    </button>
+                                </span>
                                 </div>
                             </template>
                             <template if:false={isValue}>
@@ -36,7 +46,8 @@
                              class={dropDownClass} role="listbox">
                             <ul class="slds-listbox slds-listbox_vertical" role="presentation">
                                 <template for:each={options} for:item="item">
-                                    <li key={item.Id} onclick={onSelect} data-id={item.Id} data-external={item.ExternalId} data-name={item.Name}
+                                    <li key={item.Id} onclick={onSelect} data-id={item.Id}
+                                        data-external={item.ExternalId} data-name={item.Name}
                                         role="presentation">
                                         <span class="slds-lookup__item-action slds-lookup__item-action--label"
                                               role="option">
