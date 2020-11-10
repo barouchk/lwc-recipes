@@ -2,6 +2,6 @@
  * Created by bkandov on 10/11/2020.
  */
 
-public with sharing class DummyClass1 {
+public with sharing class DummyClass2 {
 
 }
