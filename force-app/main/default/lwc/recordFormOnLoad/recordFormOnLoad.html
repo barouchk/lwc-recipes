@@ -1,0 +1,31 @@
+<!--
+ - Created by bkandov on 26/11/2020.
+ -->
+
+<!-- Record Form On Load -->
+<template>
+<!--    <lightning-card title="Handle edit form">-->
+<!--        <div class="slds-m-around_small">-->
+<!--            <lightning-record-edit-form-->
+<!--                    record-id={recordId}-->
+<!--                    object-api-name={objectApiName}-->
+<!--                    onload={handleLoad}>-->
+<!--                <template for:each={fields} for:item="field">-->
+<!--                    <div key={field.fieldApiName}>-->
+<!--                        <lightning-input-field field-name={field.fieldApiName}>-->
+<!--                        </lightning-input-field>-->
+<!--                    </div>-->
+<!--                </template>-->
+<!--            </lightning-record-edit-form>-->
+<!--        </div>-->
+<!--    </lightning-card>-->
+    <lightning-card title="Handle record form">
+        <div class="slds-m-around_small">
+            <lightning-record-form
+                    record-id={recordId}
+                    object-api-name={objectApiName}
+                    fields={fields}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

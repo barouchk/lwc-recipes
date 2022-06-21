@@ -1,0 +1,6 @@
+<template>
+    <template if:true={error}>There is an error: {error}</template>
+    <template if:false={error}>
+        <c-component-with-error></c-component-with-error>
+    </template>
+</template>

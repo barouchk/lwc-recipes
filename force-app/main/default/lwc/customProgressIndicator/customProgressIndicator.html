@@ -1,0 +1,20 @@
+<!--
+ - Created by bkandov on 29/12/2020.
+ -->
+
+<!-- Custom Progress Indicator -->
+<template>
+    <lightning-progress-indicator if:true={options}
+                                  current-step={currentStep}
+                                  type={type}
+                                  has-error={hasError}
+                                  variant="base">
+
+        <template for:each={options} for:item="option">
+            <lightning-progress-step key={option}
+                                     label={option}
+                                     value={option}>
+            </lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+</template>

@@ -1,0 +1,21 @@
+<!--
+ - Created by bkandov on 07/10/2020.
+ -->
+
+<!-- Exception Component -->
+<template>
+    <lightning-card>
+        <div class="slds-m-around_small">
+            <div>EXCEPTION HANDLING COMPONENT</div>
+            <div>
+                <lightning-button label="Success Call" variant="success" class="slds-m-horizontal_xx-small"
+                                  onclick={handleButtonSuccessClicked}></lightning-button>
+                <lightning-button label="Warning Call" variant="destructive-text" class="slds-m-horizontal_xx-small"
+                                  onclick={handleButtonErrorClicked}></lightning-button>
+                <lightning-button label="Exception Call" variant="destructive" class="slds-m-horizontal_xx-small"
+                                  onclick={handleButtonExceptionClicked}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+    <lightning-spinner if:true={state.isLoading}></lightning-spinner>
+</template>

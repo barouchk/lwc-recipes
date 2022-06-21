@@ -1,0 +1,27 @@
+<!--
+ - Created by bkandov on 01/02/2021.
+ -->
+
+<!-- Permissions -->
+<template>
+    <lightning-card>
+        <template if:false={isLoading}>
+            <lightning-combobox
+                    name="objects"
+                    label="Objects"
+                    value={selectedObject}
+                    placeholder="Select Object"
+                    options={objects}
+                    onchange={handleChange}></lightning-combobox>
+
+            <template if:true={fieldPermissions}>
+                <lightning-datatable
+                        key-field="ParentId"
+                        data={fieldPermissions}
+                        columns={columns}>
+                </lightning-datatable>
+            </template>
+        </template>
+        <lightning-spinner if:true={isLoading}></lightning-spinner>
+    </lightning-card>
+</template>

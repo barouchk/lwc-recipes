@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title={cart.title}>
+        
+        <div class="slds-p-horizontal_small">
+            <p>products : {cart.products}</p>
+            <lightning-input label="change cart title" onchange={handleCartTitleChanged}></lightning-input>
+            <div class="slds-m-top_small">
+                <lightning-button label="Load Products"  onclick={handleButtonClicked}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

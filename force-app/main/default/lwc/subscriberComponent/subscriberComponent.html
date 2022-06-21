@@ -1,0 +1,9 @@
+<template>
+    <lightning-card>
+        <div>Channel Name : {channelName}</div>
+        <div>message : {message}</div>
+        <template if:true={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>
